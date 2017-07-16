@@ -122,7 +122,7 @@
 //BOARD_RAMPS_14_EFB:EXTRUDEUR FAN BED 1 TETE DE CHAUFFE   BRANCHER: EXTRUDEUR 1 EN D10   FAN EN D9           BED EN D8
 //BOARD_RAMPS_14_EEB:EXTRUDEUR1 EXTRUDEUR2 BED             BRANCHER: EXTRUDEUR 1 EN D10   EXTRUDEUR 2 EN D9   BED EN D8     LE FAN SERA CONNECTEUR SUR UNE SORTIE SERVO
 
-  #define MOTHERBOARD BOARD_RAMPS_14_EEB
+  #define MOTHERBOARD BOARD_RAMPS_14_EFB
 #endif
 
 // Optional custom name for your RepStrap or other custom machine
@@ -136,7 +136,7 @@
 // This defines the number of extruders
 // :[1, 2, 3, 4, 5]
 // BEC DEFINIR LE NOMBRE DE TETE D'IMPRESSION SI CONFIG EN BOARD_RAMPS_14_EEB PASSER A 2
-#define EXTRUDERS 2
+#define EXTRUDERS 1
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
@@ -170,9 +170,8 @@
 // For the other hotends it is their distance from the extruder 0 hotend.
 
 // BEC POUR UNE VERSION 2 TETE, DECOMMENTER LES 2 LIGNES CI DESSOUS, ET INDIQUER LA DISTANCE X Y ENTRE LES 2 EXTRUDEURS
-
-#define HOTEND_OFFSET_X {0.0, +30.00} // (in mm) for each extruder, offset of the hotend on the X axis
-#define HOTEND_OFFSET_Y {0.0, 0.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
+//#define HOTEND_OFFSET_X {0.0, +30.00} // (in mm) for each extruder, offset of the hotend on the X axis
+//#define HOTEND_OFFSET_Y {0.0, 0.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 /**
  * Select your power supply here. Use 0 if you haven't connected the PS_ON_PIN
@@ -191,7 +190,7 @@
 #if POWER_SUPPLY > 0
   // Enable this option to leave the PSU off at startup.
   // Power to steppers and heaters will need to be turned on with M80.
-  //#define PS_DEFAULT_OFF
+  #define PS_DEFAULT_OFF
 #endif
 
 // @section temperature
@@ -253,7 +252,7 @@
 #define TEMP_SENSOR_0 5
 
 //SONDE EXTRUDEUR 2  METTRE A 0 SI UNE SEUL TETE
-#define TEMP_SENSOR_1 5
+#define TEMP_SENSOR_1 0
 
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -638,8 +637,8 @@
  * in current flowing through the wires).  This is likely most useful to users of the
  * BLTouch probe, but may also help those with inductive or other probe types.
  */
-//#define PROBING_HEATERS_OFF       // Turn heaters off when probing
-//#define PROBING_FANS_OFF          // Turn fans off when probing
+#define PROBING_HEATERS_OFF       // Turn heaters off when probing
+#define PROBING_FANS_OFF          // Turn fans off when probing
 
 // A probe that is deployed and stowed with a solenoid pin (SOL1_PIN)
 //#define SOLENOID_PROBE
@@ -674,8 +673,8 @@
 
  //BEC POSITION DU BLTOUCH PAR RAPPORT A L4EXTRUDEUR 1
 
-#define X_PROBE_OFFSET_FROM_EXTRUDER 54  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 5  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER 53  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.8  // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
@@ -839,7 +838,7 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-//BEC MODE DE MESURE 
+//BEC MODE DE MESURE
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 #define AUTO_BED_LEVELING_BILINEAR
@@ -872,7 +871,7 @@
   // Set the boundaries for probing (where the probe can reach).
   #define LEFT_PROBE_BED_POSITION 40
   #define RIGHT_PROBE_BED_POSITION 170
-  #define FRONT_PROBE_BED_POSITION 20
+  #define FRONT_PROBE_BED_POSITION 53
   #define BACK_PROBE_BED_POSITION 170
 
   // The Z probe minimum outer margin (to validate G29 parameters).
