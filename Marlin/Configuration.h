@@ -613,7 +613,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 209.1 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 120 }
 //#define MICROSTEPS 2 // (1=1/16, 2=1/32)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80*MICROSTEPS, 80*MICROSTEPS, 425*MICROSTEPS, 100*MICROSTEPS }
 
