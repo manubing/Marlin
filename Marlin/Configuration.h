@@ -613,7 +613,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 150 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 90 }
 //#define MICROSTEPS 2 // (1=1/16, 2=1/32)
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80*MICROSTEPS, 80*MICROSTEPS, 425*MICROSTEPS, 100*MICROSTEPS }
 
@@ -622,7 +622,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 8, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 4, 150 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -652,9 +652,9 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 10.0
-#define DEFAULT_YJERK                 10.0
-#define DEFAULT_ZJERK                  0.3
+#define DEFAULT_XJERK                 18.0
+#define DEFAULT_YJERK                 18.0
+#define DEFAULT_ZJERK                  0.4
 #define DEFAULT_EJERK                  5.0
 
 /**
